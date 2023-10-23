@@ -2083,7 +2083,7 @@ pre .javascript .function {
 }
 .post-toc-wrap .post-toc .nav .nav-item .nav-child {
   padding-left: 1rem;
-  display: none;
+  display: block;
 }
 .comments-container {
   display: inline-block;
