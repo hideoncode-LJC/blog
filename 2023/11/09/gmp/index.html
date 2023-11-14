@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hideoncode">
+    
+    <title>
+        
+            GMP模型 |
+        
+        Hideoncode&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logo.svg">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"hideoncode-ljc.github.io","root":"/blog/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/blog/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Hideoncode&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories">分类</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        GMP模型
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Hideoncode</span>
+                                
+                                    <span class="author-label">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-11-09 20:33:41</span>
+                <span class="mobile">2023-11-09 20:33</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Nov 12 2023 11:49:49 GMT+0800">2023-11-12 11:49:49</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/Go/">Go</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/%E8%AF%AD%E8%A8%80/">语言</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="GMP-模型"><a href="#GMP-模型" class="headerlink" title="GMP 模型"></a>GMP 模型</h1><h2 id="Golang调度器的由来"><a href="#Golang调度器的由来" class="headerlink" title="Golang调度器的由来"></a>Golang调度器的由来</h2><p><strong>进程调度的缺点</strong></p>
+<ol>
+<li>需要消耗大量的资源。</li>
+<li>如果参与调度的进程太多，CPU大量资源被用于进程调度。</li>
+</ol>
+<p><strong>内核级线程</strong></p>
+<ol>
+<li>是操作系统的最小调度单元，最小的资源的分配单元还是进程。</li>
+<li>创建、销毁、调度均由内核完成，CPU需要完成和内核态的切换。</li>
+<li>可充分类用多核，实行并行。</li>
+</ol>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h1 id="GoRoutines"><a href="#GoRoutines" class="headerlink" title="GoRoutines"></a>GoRoutines</h1><p><strong>G</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> g <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    m *m <span class="comment">// 当前g正在哪个m上执行</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    sched gobuf</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">type</span> gobuf <span class="keyword">struct</span> &#123;</span><br><span class="line">    sp <span class="type">uintptr</span> <span class="comment">// 保存CPU的rsp寄存器的值，指向函数调用栈栈顶</span></span><br><span class="line">    pc <span class="type">uintptr</span> <span class="comment">// 保存CPU的rip寄存器的值，指向程序下一条执行指令的地址 </span></span><br><span class="line">    ret <span class="type">uintptr</span> <span class="comment">// 保存系统调用的返回值</span></span><br><span class="line">    bp <span class="type">uintptr</span> <span class="comment">// 保存CPU的rbp寄存器的值，存储函数栈帧的起始位置</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>g的声明周期</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> (</span><br><span class="line">    _Gidle = <span class="literal">iota</span> <span class="comment">// GoRoutines刚开始被创建，初始化还没完成</span></span><br><span class="line">    _Grunnable <span class="comment">// GoRoutines初始化完成，等待被执行</span></span><br><span class="line">    _Grunning <span class="comment">// GoRoutines正在被执行，同一时刻对一个Processor来说，只能由一个GoRoutines位于该状态</span></span><br><span class="line">    _Gsyscall</span><br><span class="line">    _Gwaiting <span class="comment">// 挂起态，等待被唤醒 GC channel通信、IO、锁</span></span><br><span class="line">    _Gsys</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<p><strong>m</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> m <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">    goroutine with scheduling stack </span></span><br><span class="line"><span class="comment">    一类特殊的调度协程，不用于执行用户函数，负责执行g之间的切换调度，与m的关系为1:1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    g0 *g</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    tls thread-local storage </span></span><br><span class="line"><span class="comment">    线程本地存储，存储内容只对当前线程可见，线程本地存储的是m.tls的地址，m.tls[0]存储的是当前运行的g，因此线程可以通过g找到当前的m、p、g0等信息</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    tls [tlsSlots]<span class="type">uintptr</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>P</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> p <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    runqhead <span class="type">uint32</span> <span class="comment">// 队列头部</span></span><br><span class="line">    runqtail <span class="type">uint32</span> <span class="comment">// 队列尾部</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    本地Goroutine队列，最大长度为256</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    runq [<span class="number">256</span>]gintptr</span><br><span class="line">    runnext guintptr <span class="comment">// 下一个可以执行的Goroutine</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Schedt</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> schedt <span class="keyword">struct</span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    操作全局队列时使用的锁</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    lock mutex</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    全局队列</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    runq gQueue</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    全局队列的大小</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    runqsize <span class="type">int32</span></span><br><span class="line">    <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="调度流程"><a href="#调度流程" class="headerlink" title="调度流程"></a>调度流程</h1><h2 id="Schedule函数"><a href="#Schedule函数" class="headerlink" title="Schedule函数"></a><code>Schedule</code>函数</h2><ul>
+<li>根据策略找到下一个可以执行的goroutine。<code>findRunnable</code>函数</li>
+<li>执行该goroutine。<code>execute</code>函数</li>
+</ul>
+<h3 id="findRunnable函数"><a href="#findRunnable函数" class="headerlink" title="findRunnable函数"></a><code>findRunnable</code>函数</h3><p><strong>根据策略判断是否从全局队列中获取一个g</strong></p>
+<ol>
+<li>判断是否是61次调度</li>
+<li>如果是，则从全局队列获取一个g 直接执行？</li>
+<li>额外从全局队列中获取一个g‘放入到p的本地队列中，让全局队列的g也有充分执行的机会 <code>runqput</code>函数<ul>
+<li>如果本地队列已满，则把本地队列的一半连同g’一起交还给全局队列，帮助p缓解压力</li>
+<li>如果本地队列还有空间，则直接把g’放入到p的局部队列中。</li>
+</ul>
+</li>
+<li>返回g</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">schedule</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">// 寻找下一个可以执行的GoRoutine</span></span><br><span class="line">    gp, inheritTime, tryWakeP := findRunnable() <span class="comment">// 阻塞直到工作可用</span></span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">    <span class="comment">// 执行该Goroutines</span></span><br><span class="line">    execute(gp, inheritTime)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">findRunnable</span><span class="params">()</span></span> (gp *g, inheritTime, tryWakeP <span class="type">bool</span>) &#123;</span><br><span class="line">    <span class="comment">// 如果Processor已经执行了61次调度，并且当前的全局队列中存在待执行的g</span></span><br><span class="line">    <span class="keyword">if</span> _p_.schedtick % <span class="number">61</span> == <span class="number">0</span> &amp;&amp; sched.runqsize &gt; <span class="number">0</span> &#123;</span><br><span class="line">        <span class="comment">// 对全局队列进行加锁</span></span><br><span class="line">        lock(&amp;sched.lock)</span><br><span class="line">        <span class="comment">// 从全局队列中获取一个g</span></span><br><span class="line">        gp = globrunqget(_p_, <span class="number">1</span>)</span><br><span class="line">        <span class="comment">// 解锁</span></span><br><span class="line">        unlock(&amp;shced.lock)</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        gp == nil ?</span></span><br><span class="line"><span class="comment">        可能会获取失败？</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">        <span class="keyword">if</span> gp != <span class="literal">nil</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> gp, <span class="literal">false</span>, <span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">globrunqget</span><span class="params">(_p_, *p, max <span class="type">int32</span>)</span></span> *g &#123;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    判断全局队列的size</span></span><br><span class="line"><span class="comment">    如果全局队列为空，则无法获取g</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">if</span> sched.runqsize == <span class="number">0</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">nil</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    当p的个数等于一时，n就是全局队列g的个数</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    n := sched.runqsize/gomaxprocs + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> n &gt; sched.runqsize &#123;</span><br><span class="line">        n = sched.runqsize</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> max &gt; <span class="number">0</span> &amp;&amp; n &gt; max &#123;</span><br><span class="line">        n = max</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> n &gt; <span class="type">int32</span>(<span class="built_in">len</span>(_p_.runq)) / <span class="number">2</span> &#123;</span><br><span class="line">        n = <span class="type">int32</span>(<span class="built_in">len</span>(_p_.runq)) / <span class="number">2</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sched.runqsize -= n</span><br><span class="line"></span><br><span class="line">    gp </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="调度器调度"><a href="#调度器调度" class="headerlink" title="调度器调度"></a>调度器调度</h1><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">schedinit</span><span class="params">()</span></span> &#123;</span><br><span class="line">    <span class="comment">// 初始化调度器</span></span><br><span class="line">	_g_ := getg()</span><br><span class="line">	...</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 一个Go语言程序能够创建的最大线程数。</span></span><br><span class="line">    <span class="comment">// 能够运行的线程数由GOMAXPROCS决定</span></span><br><span class="line">    <span class="comment">// 可能有些线程去执行阻塞任务</span></span><br><span class="line">	sched.maxmcount = <span class="number">10000</span></span><br><span class="line"></span><br><span class="line">	...</span><br><span class="line">	sched.lastpoll = <span class="type">uint64</span>(nanotime())</span><br><span class="line">	procs := ncpu</span><br><span class="line">	<span class="keyword">if</span> n, ok := atoi32(gogetenv(<span class="string">&quot;GOMAXPROCS&quot;</span>)); ok &amp;&amp; n &gt; <span class="number">0</span> &#123;</span><br><span class="line">		procs = n</span><br><span class="line">	&#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    procresize函数执行流程</span></span><br><span class="line"><span class="comment">    全局变量 allp = []p* 存储处理器结构体</span></span><br><span class="line"><span class="comment">    1. GOMAXPROCS的个数代表正在执行的线程数，也代表着当前P的个数，所以该函数的第一个操作就是判断当前存在的p的个数和期望的p的个数。如果不够，需要进行扩容。</span></span><br><span class="line"><span class="comment">    2. new p; append(allp, p) until len(allp) == GOMAXPROCS</span></span><br><span class="line"><span class="comment">    3. 将allp[0]和线程m0绑定在一块 main thread</span></span><br><span class="line"><span class="comment">    4. 释放多余的处理器结构,截断allp,确保allp的长度和期望的处理器的数量相同</span></span><br><span class="line"><span class="comment">    5. 将多余的P设置成_Pidle状态,并且加入到全局空闲队列中</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">	<span class="keyword">if</span> procresize(procs) != <span class="literal">nil</span> &#123;</span><br><span class="line">		throw(<span class="string">&quot;unknown runnable goroutine during bootstrap&quot;</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="创建Goroutine"><a href="#创建Goroutine" class="headerlink" title="创建Goroutine"></a>创建Goroutine</h1><p>Go通过go关键字创建一个新的Goroutine。编译器通过<br><code>gc.state.stmt</code>和<code>gc.state.call</code>两个方法转换成<code>runtime.newproc</code>函数调用。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="params">(s *state)</span></span> call(n *Node, k callKind) *ssa.Value &#123;</span><br><span class="line">	<span class="keyword">if</span> k == callDeferStack &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		<span class="keyword">switch</span> &#123;</span><br><span class="line">		<span class="keyword">case</span> k == callGo:</span><br><span class="line">			call = s.newValue1A(ssa.OpStaticCall, types.TypeMem, newproc, s.mem())</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newproc</span><span class="params">(siz <span class="type">int32</span>, fn *funcval)</span></span> &#123;</span><br><span class="line">	<span class="comment">/*</span></span><br><span class="line"><span class="comment">    unsafe.Pointer 可以对地址进行操作</span></span><br><span class="line"><span class="comment">    add函数将当前函数的地址+sys.PtrSize</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    argp := add(unsafe.Pointer(&amp;fn), sys.PtrSize)</span><br><span class="line">    <span class="comment">// 获取当前正在运行的Goroutine</span></span><br><span class="line">	gp := getg()</span><br><span class="line">    <span class="comment">/* </span></span><br><span class="line"><span class="comment">    获取调用该函数的PC数值,得到返回地址,用于新的Goroutine的调用栈</span></span><br><span class="line"><span class="comment">    为什么需要获取PC值？</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">	pc := getcallerpc()</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    在系统栈？内核栈上执行一段代码</span></span><br><span class="line"><span class="comment">    一种在系统级别上运行的特殊Goroutine</span></span><br><span class="line"><span class="comment">    允许运行时执行一些可能需要特殊处理的任务</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">	systemstack(<span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        fn Go func func的函数地址</span></span><br><span class="line"><span class="comment">        argp 函数地址+sys.PtrSize的地址</span></span><br><span class="line"><span class="comment">        siz</span></span><br><span class="line"><span class="comment">        新的结构体的地址</span></span><br><span class="line"><span class="comment">        PC</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">		newg := newproc1(fn, argp, siz, gp, pc)</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        获取执行g的p的指针</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">		_p_ := getg().m.p.ptr()</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        将新建的goroutine放入当前p的运行队列</span></span><br><span class="line"><span class="comment">        true表示如果新的Goroutine是可以运行的,则唤醒任何正在等待的阻塞P</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">		runqput(_p_, newg, <span class="literal">true</span>)</span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        如果mainStarted为真,则唤醒一个P</span></span><br><span class="line"><span class="comment">        以便他可以运行新的Goroutine</span></span><br><span class="line"><span class="comment">        通常发生在程序的启动阶段</span></span><br><span class="line"><span class="comment">        */</span></span><br><span class="line">		<span class="keyword">if</span> mainStarted &#123;</span><br><span class="line">			wakep()</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">newproc1</span><span class="params">(fn *funcval, argp unsafe.Pointer, narg <span class="type">int32</span>, callergp *g, callerpc <span class="type">uintptr</span>)</span></span> *g &#123;</span><br><span class="line">    <span class="comment">// 获取执行当前Goroutine的g结构体</span></span><br><span class="line">	_g_ := getg()</span><br><span class="line">    <span class="comment">// 将narg赋值给siz 并且进行内存对齐</span></span><br><span class="line">	siz := narg</span><br><span class="line">	siz = (siz + <span class="number">7</span>) &amp;^ <span class="number">7</span></span><br><span class="line">    <span class="comment">//  </span></span><br><span class="line">	_p_ := _g_.m.p.ptr()</span><br><span class="line">	newg := gfget(_p_)</span><br><span class="line">	<span class="keyword">if</span> newg == <span class="literal">nil</span> &#123;</span><br><span class="line">		newg = malg(_StackMin)</span><br><span class="line">		casgstatus(newg, _Gidle, _Gdead)</span><br><span class="line">		allgadd(newg)</span><br><span class="line">	&#125;</span><br><span class="line">	...</span><br></pre></td></tr></table></figure>
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/%E8%AF%AD%E8%A8%80/">语言</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2023/11/08/context/"
+                                   title="context.md"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">context.md</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GMP-%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">GMP 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Golang%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E7%94%B1%E6%9D%A5"><span class="nav-number">1.1.</span> <span class="nav-text">Golang调度器的由来</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GoRoutines"><span class="nav-number">2.</span> <span class="nav-text">GoRoutines</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">调度流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Schedule%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">Schedule函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#findRunnable%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.1.</span> <span class="nav-text">findRunnable函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E5%99%A8%E8%B0%83%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">调度器调度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAGoroutine"><span class="nav-number">5.</span> <span class="nav-text">创建Goroutine</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Hideoncode</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#GMP-%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.</span> <span class="nav-text">GMP 模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Golang%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E7%94%B1%E6%9D%A5"><span class="nav-number">1.1.</span> <span class="nav-text">Golang调度器的由来</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">1.1.1.</span> <span class="nav-text"></span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GoRoutines"><span class="nav-number">2.</span> <span class="nav-text">GoRoutines</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E6%B5%81%E7%A8%8B"><span class="nav-number">3.</span> <span class="nav-text">调度流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Schedule%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.</span> <span class="nav-text">Schedule函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#findRunnable%E5%87%BD%E6%95%B0"><span class="nav-number">3.1.1.</span> <span class="nav-text">findRunnable函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%B0%83%E5%BA%A6%E5%99%A8%E8%B0%83%E5%BA%A6"><span class="nav-number">4.</span> <span class="nav-text">调度器调度</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%9B%E5%BB%BAGoroutine"><span class="nav-number">5.</span> <span class="nav-text">创建Goroutine</span></a></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>

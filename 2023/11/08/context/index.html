@@ -9,6 +9,8 @@
     
     <title>
         
+            context.md |
+        
         Hideoncode&#39;s Blog
     </title>
     
@@ -45,43 +47,14 @@
 
     <!-- home first screen  -->
     
-        
-<div class="first-screen-container border-box flex-center fade-in-down-animation">
-    <div class="first-screen-content border-box">
-        <div class="top-placeholder border-box"></div>
-
-        <div class="middle-placeholder border-box">
-            
-                <div class="description border-box">
-                    
-                        <div class="desc-item border-box"><span class="desc hitokoto"></span><span class="cursor">｜</span></div>
-                    
-                </div>
-            
-
-            
-                <script async 
-                        src="https://v1.hitokoto.cn/?encode=js"
-                >
-                </script>
-            
-        </div>
-
-        <div class="bottom-placeholder border-box">
-            
-        </div>
-    </div>
-</div>
-
-    
 
     <!-- page content -->
-    <div class="page-main-content border-box is-home">
+    <div class="page-main-content border-box">
         <div class="page-main-content-top">
             
-<header class="header-wrapper transparent-1">
+<header class="header-wrapper">
 
-    <div class="border-box header-content has-first-screen">
+    <div class="border-box header-content">
         <div class="left border-box">
             
                 <a class="logo-image border-box" href="/">
@@ -98,7 +71,7 @@
                 <ul class="menu-list">
                     
                         <li class="menu-item">
-                            <a class="active"
+                            <a class=""
                                href="/blog/"
                             >
                                 首页
@@ -145,7 +118,7 @@
         <ul class="drawer-menu-list">
             
                 <li class="drawer-menu-item flex-center">
-                    <a class="active"
+                    <a class=""
                        href="/blog/">首页</a>
                 </li>
             
@@ -180,50 +153,76 @@
 
                 
 
-                    <div class="home-content-container fade-in-down-animation">
-    <ul class="home-article-list border-box">
-        
-            <li class="home-article-item">
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
 
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        context.md
+                    </div>
                 
 
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/blog/2023/11/09/gmp/">
-                            GMP模型
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
+                
+                    <div class="article-header border-box">
                         
-                            GMP 模型Golang调度器的由来进程调度的缺点
-
-需要消耗大量的资源。
-如果参与调度的进程太多，CPU大量资源被用于进程调度。
-
-内核级线程
-
-是操作系统的最小调度单元，最小的资源的分配单元还是进程。
-创建、销毁、调度均由内核完成，CPU需要完成...
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.svg">
+                            </div>
                         
-                    </div>
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Hideoncode</span>
+                                
+                                    <span class="author-label">Lv1</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
 
-                    
-
-<div class="article-meta-info-container border-box home">
+<div class="article-meta-info-container border-box post">
     <div class="article-meta-info border-box">
         
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Sun Nov 12 2023 11:49:49 GMT+0800">2023-11-12 11:49:49</span>
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-11-08 20:33:41</span>
+                <span class="mobile">2023-11-08 20:33</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Wed Nov 08 2023 20:46:06 GMT+0800">2023-11-08 20:46:06</span>
             </span>
         
 
-
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/Go/">Go</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
-
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/%E8%AF%AD%E8%A8%80/">语言</a></li>
+                        
+                    
+                </ul>
+            </span>
         
 
         
@@ -233,269 +232,112 @@
     </div>
 
     
-        <a class="home-read-more" href="/blog/2023/11/09/gmp/">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
 </div>
 
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="Context-理解"><a href="#Context-理解" class="headerlink" title="Context 理解"></a>Context 理解</h1><h2 id="源码理解"><a href="#源码理解" class="headerlink" title="源码理解"></a>源码理解</h2><p><strong>接口定义</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">type</span> context <span class="keyword">interface</span> &#123;</span><br><span class="line">    Deadline() (deadlint time.Time, ok <span class="type">bool</span>)</span><br><span class="line">    Done() &lt;-<span class="keyword">chan</span> <span class="keyword">struct</span> &#123;&#125;</span><br><span class="line">    Err() <span class="type">error</span></span><br><span class="line">    Value(key any) any</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>Deadline()</code>方法返回了该<code>Context</code>的过期时间，<code>bool</code> ?</li>
+<li><code>Done</code>方法返回了一个空结构体类型的通道,当通道存在信号时,表示该<code>Context</code>方法被取消。</li>
+<li><code>Err()</code>方法返回<code>Context</code>被取消的原因</li>
+<li><code>Value()</code>传递值</li>
+</ul>
+<p><strong>错误类型定义</strong></p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> </span><br></pre></td></tr></table></figure>
                 </div>
-            </li>
-        
-            <li class="home-article-item">
 
                 
 
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/blog/2023/11/08/context/">
-                            context.md
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
                         
-                            Context 理解源码理解接口定义
-123456type context interface &#123;    Deadline() (deadlint time.Time, ok bool)    Done() &lt;-chan struct...
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/%E8%AF%AD%E8%A8%80/">语言</a>
+                                    </li>
+                                
+                            </ul>
                         
                     </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 08 2023 20:46:06 GMT+0800">2023-11-08 20:46:06</span>
-            </span>
-        
-
-
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/blog/2023/11/08/context/">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
-</div>
-
+                    <div>
+                        
+                    </div>
                 </div>
-            </li>
-        
-            <li class="home-article-item">
 
                 
 
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/blog/2023/11/08/options/">
-                            options.md
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
+                
+                    <div class="article-nav">
                         
-                            Go语言设计模式
-函数式选项模式
-
-为什么需要Options传统的面向对象模式传统的面向对象模式的结构体
-12345678910111213141516171819// declare Structtype DoSomeThingOptions st...
+                            <div class="article-prev">
+                                <a class="prev"
+                                   rel="prev"
+                                   href="/blog/2023/11/09/gmp/"
+                                   title="GMP模型"
+                                >
+                                    <span class="left arrow-icon flex-center">
+                                      <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                            <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">GMP模型</span>
+                                        <span class="post-nav-item">上一篇</span>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2023/11/08/options/"
+                                   title="options.md"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">options.md</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
                         
                     </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Mon Nov 13 2023 21:30:16 GMT+0800">2023-11-13 21:30:16</span>
-            </span>
-        
-
-
-        
-
-        
-
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/blog/2023/11/08/options/">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
                 
 
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/blog/2023/11/08/subquery/">
-                            子查询
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            子查询为什么需要子查询比如有一张salary table，你想要查询比员工A工资高的员工都有谁？此时该如何查询。利用前面的知识，可以使用以下两种方法。
-1234567891011121314# 方法一1. 先计算员工A的工资2. 然后在查询比第一步得...
-                        
-                    </div>
-
+                
                     
 
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Tue Nov 14 2023 19:09:13 GMT+0800">2023-11-14 19:09:13</span>
-            </span>
-        
 
 
-        
 
-        
 
-        
-
-        
-        
-        
-        
-    </div>
-
-    
-        <a class="home-read-more" href="/blog/2023/11/08/subquery/">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-            <li class="home-article-item">
 
                 
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/blog/2023/10/22/test-md/">
-                            test.md
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Wed Nov 08 2023 19:16:25 GMT+0800">2023-11-08 19:16:25</span>
-            </span>
-        
-
+            </div>
+        </div>
 
         
-
-        
-
-        
-
-        
-        
-        
-        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Context-%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">Context 理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%90%86%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">源码理解</span></a></li></ol></li></ol>
     </div>
-
-    
-        <a class="home-read-more" href="/blog/2023/10/22/test-md/">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
 </div>
 
-                </div>
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <div class="home-article-item-bottom border-box">
-                    
-                    <h3 class="home-article-title border-box">
-                        <a href="/blog/2023/10/22/hello-world/">
-                            Hello World
-                        </a>
-                    </h3>
-
-                    <div class="home-article-content keep-markdown-body">
-                        
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, yo...
-                        
-                    </div>
-
-                    
-
-<div class="article-meta-info-container border-box home">
-    <div class="article-meta-info border-box">
-        
-            <span class="meta-info-item border-box">
-                <i class="icon fas fa-history"></i>&nbsp;<span class="home-article-history" data-updated="Sun Oct 22 2023 20:02:10 GMT+0800">2023-10-22 20:02:10</span>
-            </span>
-        
-
-
-        
-
-        
-
-        
-
-        
-        
-        
+            </div>
         
     </div>
-
-    
-        <a class="home-read-more" href="/blog/2023/10/22/hello-world/">阅读全文&nbsp;<i class="icon fas fa-angles-right"></i></a>
-    
-</div>
-
-                </div>
-            </li>
-        
-    </ul>
-    
-
-
-
 </div>
 
 
@@ -540,10 +382,27 @@
 
     <!-- post tools -->
     
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
 
     <!-- side tools -->
     <div class="side-tools">
-        <div class="side-tools-container border-box side-tools-show-handle">
+        <div class="side-tools-container border-box ">
     <ul class="side-tools-list side-tools-show-handle border-box">
         <li class="tools-item tool-font-adjust-plus flex-center">
             <i class="fas fa-search-plus"></i>
@@ -566,6 +425,10 @@
     </ul>
 
     <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
         
 
         
@@ -594,8 +457,18 @@
 
     <!-- tablet toc -->
     
-</main>
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Context-%E7%90%86%E8%A7%A3"><span class="nav-number">1.</span> <span class="nav-text">Context 理解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%90%E7%A0%81%E7%90%86%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">源码理解</span></a></li></ol></li></ol>
+    </div>
+</div>
 
+            </div>
+        </div>
+    
+</main>
 
 
 
@@ -614,6 +487,20 @@
 
 
 <div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
     
 
     <!-- category-page -->
