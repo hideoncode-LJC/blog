@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Hideoncode">
+    
+    <title>
+        
+            vue入门 |
+        
+        Hideoncode&#39;s Blog
+    </title>
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
+    
+        <link rel="shortcut icon" href="/blog/images/logo.svg">
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/regular.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/solid.min.css">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"hideoncode-ljc.github.io","root":"/blog/","language":"zh-CN"}
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true,"layout":"right"},"style":{"primary_color":"#0066cc","logo":"/images/logo.svg","favicon":"/images/logo.svg","avatar":"/images/avatar.svg","first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving.","hitokoto":true},"scroll":{"progress_bar":false,"percent":true}},"local_search":{"enable":false,"preload":false},"code_block":{"tools":{"enable":true,"style":"default"},"highlight_theme":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false}},"post":{"author_label":{"enable":true,"auto":true,"custom_label_list":["Trainee","Engineer","Architect"]},"word_count":{"wordcount":false,"min2read":false},"datetime_format":"YYYY-MM-DD HH:mm:ss","copyright_info":false,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":false,"page_pv":false}},"version":"3.8.5"}
+    KEEP.language_ago = {"second":"%s 秒前","minute":"%s 分钟前","hour":"%s 小时前","day":"%s 天前","week":"%s 周前","month":"%s 个月前","year":"%s 年前"}
+    KEEP.language_code_block = {"copy":"复制代码","copied":"已复制","fold":"折叠代码块","folded":"已折叠"}
+    KEEP.language_copy_copyright = {"copy":"复制版权信息","copied":"已复制","title":"原文标题","author":"原文作者","link":"原文链接"}
+  </script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container border-box">
+
+    <!-- home first screen  -->
+    
+
+    <!-- page content -->
+    <div class="page-main-content border-box">
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+                <a class="logo-image border-box" href="/">
+                    <img src="/blog/images/logo.svg">
+                </a>
+            
+            <a class="site-name border-box" href="/">
+               Hideoncode&#39;s Blog
+            </a>
+        </div>
+
+        <div class="right border-box">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/tags"
+                            >
+                                标签
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/blog/categories"
+                            >
+                                分类
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/tags">标签</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/blog/categories">分类</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle border-box">
+
+            <div class="main-content border-box">
+
+                
+
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+
+        <div class="article-content-container border-box">
+
+            
+
+            <div class="article-content-bottom border-box">
+                
+                    <div class="article-title">
+                        vue入门
+                    </div>
+                
+
+                
+                    <div class="article-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/blog/images/avatar.svg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author">
+                                <span class="name">Hideoncode</span>
+                                
+                                    <span class="author-label">Lv2</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
+
+<div class="article-meta-info-container border-box post">
+    <div class="article-meta-info border-box">
+        
+
+
+        
+            <span class="meta-info-item article-create-date">
+                <i class="icon fa-solid fa-calendar-check"></i>&nbsp;
+                <span class="pc">2023-12-15 00:43:44</span>
+                <span class="mobile">2023-12-15 00:43</span>
+            </span>
+
+            <span class="meta-info-item article-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="pc" data-updated="Sun Dec 17 2023 14:39:11 GMT+0800">2023-12-17 14:39:11</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item article-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="article-category-ul">
+                    
+                            <li class="category-item"><a href="/blog/categories/vue/">vue</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="article-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="article-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/blog/tags/vue/">vue</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+        
+        
+    </div>
+
+    
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+                
+
+                <div class="article-content keep-markdown-body">
+                    
+
+                    <h1 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h1><h2 id="常见vue标签"><a href="#常见vue标签" class="headerlink" title="常见vue标签"></a>常见vue标签</h2><blockquote>
+<p>常用指令<br>在HTML标签上带有v-前缀的特殊属性。不同的指令具有不同的含义，可以实现不同的功能。</p>
+</blockquote>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><blockquote>
+<p>列表渲染，遍历容器的元素或者对象的属性</p>
+</blockquote>
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><blockquote>
+<p>为HTML标签绑定属性值，如设置href，css样式等</p>
+</blockquote>
+<h3 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if &amp;&amp; v-else-if &amp;&amp; v-else"></a>v-if &amp;&amp; v-else-if &amp;&amp; v-else</h3><blockquote>
+<p>v-show</p>
+</blockquote>
+<blockquote>
+<p>根据条件展示某元素，区别在于切换的是display的值</p>
+</blockquote>
+<p><strong>应用场景</strong></p>
+<p>大数据杀熟</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><blockquote>
+<p> 为HTML标签绑定事件</p>
+</blockquote>
+<h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p><strong>作用</strong></p>
+<p>在表单元素上使用,双向数据绑定。可以方便的获取或者设置表单项数据</p>
+<p><strong>语法</strong></p>
+<ul>
+<li>数据变化，视图中的数据也会变化。反之亦然。</li>
+<li>绑定的数据需要在<code>data()</code>中定义。</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 数据 --&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-model</span>=<span class="string">&quot;searchConditions.category&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">v-mode</span>=<span class="string">&quot;searchConditions.state&gt;</span></span></span><br><span class="line"><span class="string"><span class="tag"></span></span></span><br><span class="line"><span class="string"><span class="tag">&lt;script&gt;</span></span></span><br><span class="line"><span class="string"><span class="tag">    // v-model=&quot;</span><span class="attr">变量名</span>&quot;</span></span><br><span class="line"><span class="tag">    // <span class="attr">view</span> <span class="attr">视图</span></span></span><br><span class="line"><span class="tag">    <span class="attr">createApp</span>(&#123;</span></span><br><span class="line"><span class="tag">        <span class="attr">data</span>() &#123;</span></span><br><span class="line"><span class="tag">            <span class="attr">return</span> &#123;</span></span><br><span class="line"><span class="tag">                <span class="attr">searchConditions:</span> &#123;</span></span><br><span class="line"><span class="tag">                    <span class="attr">category:</span>&#x27;&#x27;,</span></span><br><span class="line"><span class="tag">                    <span class="attr">state:</span>&#x27;&#x27;</span></span><br><span class="line"><span class="tag">                &#125;</span></span><br><span class="line"><span class="tag">            &#125;</span></span><br><span class="line"><span class="tag">        &#125;</span></span><br><span class="line"><span class="tag">    &#125;)<span class="attr">.mount</span>(&quot;#<span class="attr">app</span>&quot;)</span></span><br><span class="line"><span class="tag">&lt;/<span class="attr">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="vue的声明周期"><a href="#vue的声明周期" class="headerlink" title="vue的声明周期"></a>vue的声明周期</h2><p>生命周期：指一个对象从创建到销毁的过程</p>
+<p>生命周期的八个阶段：每个阶段都会自动执行一个生命周期方法，简称钩子函数，让开发者有机会在特定的阶段执行自己的代码。</p>
+<ul>
+<li>beforeCreate vue实例创建前调用</li>
+<li>created vue实例创建后调用</li>
+<li>beforeMount vue实例挂载到界面前调用</li>
+<li>mounted vue实例挂载到页面后调用</li>
+<li>beforeUpdate 数据更新前</li>
+<li>updated 数据更新后</li>
+<li>beforeUnmount 组件销毁前</li>
+<li>unmounted 组件销毁后</li>
+</ul>
+<p>对于以上的八个钩子函数,mounted函数需要重点关注,一般获取数据的网络请求都会写在该函数中,即Ajax请求。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 生命周期-钩子函数 mounted</span><br><span class="line">mounted() &#123;</span><br><span class="line">    console.log(&#x27;vue 挂载完毕,发送请求获取数据&#x27;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>对于Ajax发送异步请求,可以使用</p>
+<ul>
+<li>原生的xml http请求</li>
+<li>封装好的函数库</li>
+</ul>
+<h2 id="Axios"><a href="#Axios" class="headerlink" title="Axios"></a>Axios</h2><blockquote>
+<p>Ajax函数库，对原生的Ajax函数库进行了封装</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 引入axios的js文件 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">/*</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        请求格式</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        axios(&#123;参数&#125;).then(result)&#123;&#125;.catch(err)&#123;&#125;</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        then表示成功回调函数</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        result代表服务器响应的所有的数据，包含了响应头、响应体</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        result.data代表的是接口响应的核心数据</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        catch表示失败回调函数</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript"></span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        对于参数</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        url是必须的</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        method</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        data 看是否含有数据</span></span></span><br><span class="line"><span class="comment"><span class="language-javascript">        */</span></span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">// 发送get请求</span></span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">axios</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">method</span>:<span class="string">&#x27;get&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">url</span>:<span class="string">&#x27;http://127.0.0.1:8080/getAll&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">data</span>)</span></span><br><span class="line"><span class="language-javascript">        &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        <span class="comment">//发送post请求</span></span></span><br><span class="line"><span class="language-javascript">        <span class="title function_">axios</span>(&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">method</span>:<span class="string">&#x27;post&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">url</span>:<span class="string">&#x27;http://.....&#x27;</span>,</span></span><br><span class="line"><span class="language-javascript">            <span class="attr">data</span>: data</span></span><br><span class="line"><span class="language-javascript">        &#125;).<span class="title function_">then</span>(<span class="function"><span class="params">result</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">data</span>)</span></span><br><span class="line"><span class="language-javascript">        &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span></span><br><span class="line"><span class="language-javascript">            <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span></span><br><span class="line"><span class="language-javascript">        &#125;)</span></span><br><span class="line"><span class="language-javascript">    </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="Axios使用步骤"><a href="#Axios使用步骤" class="headerlink" title="Axios使用步骤"></a>Axios使用步骤</h3><ul>
+<li>引入Axios的js文件</li>
+<li>使用Axios发送请求，并获取相应的结果</li>
+</ul>
+<h3 id="axios的请求方式别名"><a href="#axios的请求方式别名" class="headerlink" title="axios的请求方式别名"></a>axios的请求方式别名</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/axios/dist/axios.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    <span class="comment">// url 是必须的，其他参数根据情况</span></span></span><br><span class="line"><span class="language-javascript">    axios.<span class="title function_">get</span>(url, data, config).<span class="title function_">then</span>(<span class="function"><span class="params">result</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(result.<span class="property">data</span>)</span></span><br><span class="line"><span class="language-javascript">    &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="language-javascript">        <span class="variable language_">console</span>.<span class="title function_">log</span>(err)</span></span><br><span class="line"><span class="language-javascript">    &#125;)</span></span><br><span class="line"><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">    axios.<span class="title function_">post</span>()</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="vue-工程化"><a href="#vue-工程化" class="headerlink" title="vue 工程化"></a>vue 工程化</h2>
+                </div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/blog/tags/vue/">vue</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="article-nav">
+                        
+                        
+                            <div class="article-next">
+                                <a class="next"
+                                   rel="next"
+                                   href="/blog/2023/11/15/%E5%A4%9A%E8%A1%A8%E6%9F%A5%E8%AF%A2/"
+                                   title="多表查询"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">多表查询</span>
+                                        <span class="post-nav-item">下一篇</span>
+                                    </span>
+                                            <span class="right arrow-icon flex-center">
+                                      <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
+        </div>
+
+        
+            <div class="pc-post-toc right-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue"><span class="nav-number">1.</span> <span class="nav-text">vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81vue%E6%A0%87%E7%AD%BE"><span class="nav-number">1.1.</span> <span class="nav-text">常见vue标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for"><span class="nav-number">1.1.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind"><span class="nav-number">1.1.2.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if-v-else-if-v-else"><span class="nav-number">1.1.3.</span> <span class="nav-text">v-if &amp;&amp; v-else-if &amp;&amp; v-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-on"><span class="nav-number">1.1.4.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">1.1.5.</span> <span class="nav-text">v-model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E7%9A%84%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F"><span class="nav-number">1.2.</span> <span class="nav-text">vue的声明周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Axios"><span class="nav-number">1.3.</span> <span class="nav-text">Axios</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Axios%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.3.1.</span> <span class="nav-text">Axios使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axios%E7%9A%84%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%88%AB%E5%90%8D"><span class="nav-number">1.3.2.</span> <span class="nav-text">axios的请求方式别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-%E5%B7%A5%E7%A8%8B%E5%8C%96"><span class="nav-number">1.4.</span> <span class="nav-text">vue 工程化</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom border-box">
+            
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
+        
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2020</span>&nbsp;-&nbsp;2023
+                
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">Hideoncode</a>
+                
+            </div>
+
+            <div class="theme-info info-item default">
+                由&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;驱动&nbsp;&&nbsp;主题&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+
+            
+        
+
+        <div class="count-item info-item default">
+            
+
+            
+
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- post tools -->
+    
+        <div class="post-tools right-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
+        
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        <!-- PC go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
+    </ul>
+</div>
+
+    </div>
+
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    <!-- local search -->
+    
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vue"><span class="nav-number">1.</span> <span class="nav-text">vue</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81vue%E6%A0%87%E7%AD%BE"><span class="nav-number">1.1.</span> <span class="nav-text">常见vue标签</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#v-for"><span class="nav-number">1.1.1.</span> <span class="nav-text">v-for</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-bind"><span class="nav-number">1.1.2.</span> <span class="nav-text">v-bind</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-if-v-else-if-v-else"><span class="nav-number">1.1.3.</span> <span class="nav-text">v-if &amp;&amp; v-else-if &amp;&amp; v-else</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-on"><span class="nav-number">1.1.4.</span> <span class="nav-text">v-on</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#v-model"><span class="nav-number">1.1.5.</span> <span class="nav-text">v-model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue%E7%9A%84%E5%A3%B0%E6%98%8E%E5%91%A8%E6%9C%9F"><span class="nav-number">1.2.</span> <span class="nav-text">vue的声明周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Axios"><span class="nav-number">1.3.</span> <span class="nav-text">Axios</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Axios%E4%BD%BF%E7%94%A8%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.3.1.</span> <span class="nav-text">Axios使用步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#axios%E7%9A%84%E8%AF%B7%E6%B1%82%E6%96%B9%E5%BC%8F%E5%88%AB%E5%90%8D"><span class="nav-number">1.3.2.</span> <span class="nav-text">axios的请求方式别名</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vue-%E5%B7%A5%E7%A8%8B%E5%8C%96"><span class="nav-number">1.4.</span> <span class="nav-text">vue 工程化</span></a></li></ol></li></ol>
+    </div>
+</div>
+
+            </div>
+        </div>
+    
+</main>
+
+
+
+<!-- common -->
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/dark-light-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
+
+
+<!-- code-block -->
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/code-block.js"></script>
+
+
+<!-- lazyload -->
+
+
+<div class="">
+    
+        <!-- post-helper -->
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/post-helper.js"></script>
+
+        <!-- toc -->
+        
+            <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.8.5/source/js/post/toc.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+</div>
+
+<!-- mermaid -->
+
+
+<!-- pjax -->
+
+
+
+</body>
+</html>
